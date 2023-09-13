@@ -88,11 +88,11 @@ partial class Form1
         // 
         label3.AutoSize = true;
         label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-        label3.Location = new Point(160, 137);
+        label3.Location = new Point(173, 137);
         label3.Name = "label3";
-        label3.Size = new Size(72, 15);
+        label3.Size = new Size(48, 15);
         label3.TabIndex = 5;
-        label3.Text = "PESQUISAR";
+        label3.Text = "EDITAR";
         // 
         // btn_search
         // 
@@ -125,6 +125,7 @@ partial class Form1
         btn_delete.Size = new Size(107, 122);
         btn_delete.TabIndex = 6;
         btn_delete.UseVisualStyleBackColor = true;
+        btn_delete.Click += btn_delete_Click;
         // 
         // label5
         // 
@@ -148,9 +149,6 @@ partial class Form1
         btn_list.UseVisualStyleBackColor = true;
         btn_list.Click += btn_list_Click;
         // 
-        // mySqlCommand1
-        // 
-        // 
         // dataGridView1
         // 
         dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -164,7 +162,7 @@ partial class Form1
         // 
         label6.AutoSize = true;
         label6.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
-        label6.Location = new Point(575, 63);
+        label6.Location = new Point(630, 52);
         label6.Name = "label6";
         label6.Size = new Size(149, 37);
         label6.TabIndex = 11;
@@ -174,7 +172,7 @@ partial class Form1
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(749, 317);
+        ClientSize = new Size(842, 317);
         Controls.Add(label6);
         Controls.Add(dataGridView1);
         Controls.Add(label5);

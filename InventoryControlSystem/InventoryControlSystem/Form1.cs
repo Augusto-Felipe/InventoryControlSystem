@@ -18,7 +18,6 @@ namespace InventoryControlSystem
             {
                 Product product = new Product(productName);
                 inventory.AddProduct(product);
-
                 MessageBox.Show("Item inserido com sucesso!");
             }
             else
@@ -40,6 +39,29 @@ namespace InventoryControlSystem
             else
             {
                 dataGridView1.DataSource = inventory.ListProducts();
+            }
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            List<Product> list = inventory.ListProducts();
+
+            int produtId = int.Parse(txt_name.Text);
+
+            foreach (Product product in list)
+            {
+                if (product.Id == produtId)
+                {
+                    inventory.RemoveProduct(product);
+                    dataGridView1.DataSource = null;
+                    dataGridView1.DataSource = inventory.ListProducts();
+                    MessageBox.Show("Produto excluído com sucesso!");
+                    break;
+                }
+                else
+                {
+                    MessageBox.Show("ID não existe!");
+                }
             }
         }
     }
