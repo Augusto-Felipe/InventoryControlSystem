@@ -72,5 +72,28 @@ namespace InventoryControlSystem
                 MessageBox.Show("Insira o ID");
             }
         }
+
+        private void btn_edit_Click(object sender, EventArgs e)
+        {
+            List<Product> list = inventory.ListProducts();
+
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int selectedProductID = (int)dataGridView1.SelectedRows[0].Cells["id"].Value;
+
+                foreach (Product product in list)
+                {
+                    if (product.Id == selectedProductID)
+                    {
+                        EditProduct editForm = new EditProduct(product);
+                        editForm.ShowDialog();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione um produto na tabela!");
+            }
+        }
     }
 }

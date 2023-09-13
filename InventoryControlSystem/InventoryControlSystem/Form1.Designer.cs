@@ -34,7 +34,7 @@ partial class Form1
         btn_add = new Button();
         label2 = new Label();
         label3 = new Label();
-        btn_search = new Button();
+        btn_edit = new Button();
         label4 = new Label();
         btn_delete = new Button();
         label5 = new Label();
@@ -93,16 +93,17 @@ partial class Form1
         label3.TabIndex = 5;
         label3.Text = "EDITAR";
         // 
-        // btn_search
+        // btn_edit
         // 
-        btn_search.BackgroundImage = (Image)resources.GetObject("btn_search.BackgroundImage");
-        btn_search.BackgroundImageLayout = ImageLayout.Stretch;
-        btn_search.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-        btn_search.Location = new Point(144, 12);
-        btn_search.Name = "btn_search";
-        btn_search.Size = new Size(107, 122);
-        btn_search.TabIndex = 4;
-        btn_search.UseVisualStyleBackColor = true;
+        btn_edit.BackgroundImage = (Image)resources.GetObject("btn_edit.BackgroundImage");
+        btn_edit.BackgroundImageLayout = ImageLayout.Stretch;
+        btn_edit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        btn_edit.Location = new Point(144, 12);
+        btn_edit.Name = "btn_edit";
+        btn_edit.Size = new Size(107, 122);
+        btn_edit.TabIndex = 4;
+        btn_edit.UseVisualStyleBackColor = true;
+        btn_edit.Click += btn_edit_Click;
         // 
         // label4
         // 
@@ -168,7 +169,7 @@ partial class Form1
         Controls.Add(label4);
         Controls.Add(btn_delete);
         Controls.Add(label3);
-        Controls.Add(btn_search);
+        Controls.Add(btn_edit);
         Controls.Add(label2);
         Controls.Add(btn_add);
         Controls.Add(txt_name);
@@ -187,7 +188,7 @@ partial class Form1
     private Button btn_add;
     private Label label2;
     private Label label3;
-    private Button btn_search;
+    private Button btn_edit;
     private Label label4;
     private Button btn_delete;
     private Label label5;
