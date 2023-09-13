@@ -40,7 +40,6 @@ partial class Form1
         label5 = new Label();
         btn_list = new Button();
         dataGridView1 = new DataGridView();
-        label6 = new Label();
         ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
         SuspendLayout();
         // 
@@ -158,22 +157,11 @@ partial class Form1
         dataGridView1.Size = new Size(248, 184);
         dataGridView1.TabIndex = 10;
         // 
-        // label6
-        // 
-        label6.AutoSize = true;
-        label6.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
-        label6.Location = new Point(630, 52);
-        label6.Name = "label6";
-        label6.Size = new Size(149, 37);
-        label6.TabIndex = 11;
-        label6.Text = "Instruções";
-        // 
         // Form1
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(842, 317);
-        Controls.Add(label6);
+        ClientSize = new Size(590, 317);
         Controls.Add(dataGridView1);
         Controls.Add(label5);
         Controls.Add(btn_list);
@@ -205,5 +193,4 @@ partial class Form1
     private Label label5;
     private Button btn_list;
     private DataGridView dataGridView1;
-    private Label label6;
 }

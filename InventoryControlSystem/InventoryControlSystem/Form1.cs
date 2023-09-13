@@ -38,6 +38,7 @@ namespace InventoryControlSystem
             }
             else
             {
+                dataGridView1.DataSource = null;
                 dataGridView1.DataSource = inventory.ListProducts();
             }
         }
@@ -46,22 +47,29 @@ namespace InventoryControlSystem
         {
             List<Product> list = inventory.ListProducts();
 
-            int produtId = int.Parse(txt_name.Text);
-
-            foreach (Product product in list)
+            if (!string.IsNullOrEmpty(txt_name.Text))
             {
-                if (product.Id == produtId)
+                int produtId = int.Parse(txt_name.Text);
+
+                foreach (Product product in list)
                 {
-                    inventory.RemoveProduct(product);
-                    dataGridView1.DataSource = null;
-                    dataGridView1.DataSource = inventory.ListProducts();
-                    MessageBox.Show("Produto excluído com sucesso!");
-                    break;
+                    if (product.Id == produtId)
+                    {
+                        inventory.RemoveProduct(product);
+                        dataGridView1.DataSource = null;
+                        dataGridView1.DataSource = inventory.ListProducts();
+                        MessageBox.Show("Produto excluído com sucesso!");
+                        break;
+                    }
+                    else
+                    {
+                        MessageBox.Show("ID não existe!");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("ID não existe!");
-                }
+            }
+            else
+            {
+                MessageBox.Show("Insira o ID");
             }
         }
     }
