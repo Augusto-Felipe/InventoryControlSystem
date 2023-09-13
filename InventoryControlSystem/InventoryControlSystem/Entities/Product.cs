@@ -4,32 +4,22 @@
     {
         public int Id { get; private set; }
         public string Name { get; set; }
-        public List<Product> Products { get; set; }
-
+        
         public Product()
         {
 
         }
 
-        public Product(int id, string name)
+        public Product(string name)
         {
-            Id = id;
+            Id = GenerateRandomId();
             Name = name;
         }
 
-        public void AddProduct(Product product)
+        private int GenerateRandomId()
         {
-            Products.Add(product);
-        }
-
-        public void RemoveProduct(Product product)
-        {
-            Products.Remove(product);
-        }
-
-        public void ListProducts(Product product)
-        {
-
+            Random random = new Random();
+            return random.Next(1, 100);
         }
     }
 }

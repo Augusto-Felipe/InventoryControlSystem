@@ -1,7 +1,11 @@
+using InventoryControlSystem.Entities;
+
 namespace InventoryControlSystem
 {
     public partial class Form1 : Form
     {
+        Inventory inventory = new Inventory();
+
         public Form1()
         {
             InitializeComponent();
@@ -9,13 +13,34 @@ namespace InventoryControlSystem
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            string product = txt_name.Text;
+            string productName = txt_name.Text;
+            if (productName.Length > 0)
+            {
+                Product product = new Product(productName);
+                inventory.AddProduct(product);
 
+                MessageBox.Show("Item inserido com sucesso!");
+            }
+            else
+            {
+                MessageBox.Show("Nome deve ter mais de 1 caractere!");
+            }
+
+            txt_name.Text = "";
         }
 
         private void btn_list_Click(object sender, EventArgs e)
         {
-            
+            List<Product> list = inventory.ListProducts();
+
+            if (list.Count == 0)
+            {
+                MessageBox.Show("Adicione itens na lista!");
+            }
+            else
+            {
+                dataGridView1.DataSource = inventory.ListProducts();
+            }
         }
     }
 }
