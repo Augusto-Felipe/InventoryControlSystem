@@ -1,5 +1,3 @@
-using System.Data;
-
 namespace InventoryControlSystem
 {
     public partial class Form1 : Form
