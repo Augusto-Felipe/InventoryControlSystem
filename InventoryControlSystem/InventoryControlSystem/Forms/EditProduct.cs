@@ -5,7 +5,7 @@ namespace InventoryControlSystem
 {
     public partial class EditProduct : Form
     {
-        //ProductRepository repository = new ProductRepository();
+        public EventHandler DataEdited;
 
         public EditProduct()
         {
@@ -24,6 +24,7 @@ namespace InventoryControlSystem
                 if (product.Id == productID)
                 {
                     product.Name = newProductName;
+                    DataEdited.Invoke(this, EventArgs.Empty);
                     MessageBox.Show("Produto Alterado com sucesso!");
                 }
             }
