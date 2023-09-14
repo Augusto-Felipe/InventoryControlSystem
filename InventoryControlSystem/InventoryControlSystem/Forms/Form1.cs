@@ -1,12 +1,11 @@
 using InventoryControlSystem.Entities;
+using InventoryControlSystem.Forms;
 using InventoryControlSystem.Repositories;
 
 namespace InventoryControlSystem
 {
     public partial class Form1 : Form
     {
-        ProductRepository inventory = new ProductRepository();
-
         public Form1()
         {
             InitializeComponent();
@@ -14,19 +13,8 @@ namespace InventoryControlSystem
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            string productName = txt_name.Text;
-            if (productName.Length > 0)
-            {
-                Product product = new Product(productName);
-                ProductRepository.Instance.AddProduct(product);
-                MessageBox.Show("Item inserido com sucesso!");
-            }
-            else
-            {
-                MessageBox.Show("Nome deve ter mais de 1 caractere!");
-            }
-
-            txt_name.Text = "";
+            AddProduct addForm = new AddProduct();
+            addForm.ShowDialog();
         }
 
         private void btn_list_Click(object sender, EventArgs e)

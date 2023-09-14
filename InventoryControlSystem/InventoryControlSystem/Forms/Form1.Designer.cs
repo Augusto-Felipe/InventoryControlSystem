@@ -30,7 +30,6 @@ partial class Form1
     {
         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
         label1 = new Label();
-        txt_name = new TextBox();
         btn_add = new Button();
         label2 = new Label();
         label3 = new Label();
@@ -49,17 +48,9 @@ partial class Form1
         label1.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
         label1.Location = new Point(361, 23);
         label1.Name = "label1";
-        label1.Size = new Size(123, 37);
+        label1.Size = new Size(135, 37);
         label1.TabIndex = 0;
-        label1.Text = "Produto";
-        // 
-        // txt_name
-        // 
-        txt_name.Location = new Point(297, 63);
-        txt_name.Multiline = true;
-        txt_name.Name = "txt_name";
-        txt_name.Size = new Size(248, 26);
-        txt_name.TabIndex = 1;
+        label1.Text = "Produtos";
         // 
         // btn_add
         // 
@@ -153,10 +144,10 @@ partial class Form1
         // 
         dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dataGridView1.Location = new Point(297, 102);
+        dataGridView1.Location = new Point(297, 63);
         dataGridView1.Name = "dataGridView1";
         dataGridView1.RowTemplate.Height = 25;
-        dataGridView1.Size = new Size(248, 184);
+        dataGridView1.Size = new Size(248, 223);
         dataGridView1.TabIndex = 10;
         // 
         // Form1
@@ -173,7 +164,6 @@ partial class Form1
         Controls.Add(btn_edit);
         Controls.Add(label2);
         Controls.Add(btn_add);
-        Controls.Add(txt_name);
         Controls.Add(label1);
         Name = "Form1";
         Text = "Form1";
@@ -185,7 +175,6 @@ partial class Form1
     #endregion
 
     private Label label1;
-    private TextBox txt_name;
     private Button btn_add;
     private Label label2;
     private Label label3;
